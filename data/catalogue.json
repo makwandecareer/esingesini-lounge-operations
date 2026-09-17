@@ -1,0 +1,762 @@
+[
+  {
+    "sku": "BRANDY-001",
+    "category": "BRANDY",
+    "name": "Klipdrift Export",
+    "serving": "25 ml",
+    "selling_price_zar": 30,
+    "active": true
+  },
+  {
+    "sku": "BRANDY-002",
+    "category": "BRANDY",
+    "name": "Klipdrift Premium",
+    "serving": "25 ml",
+    "selling_price_zar": 35,
+    "active": true
+  },
+  {
+    "sku": "BRANDY-003",
+    "category": "BRANDY",
+    "name": "Richelieu",
+    "serving": "25 ml",
+    "selling_price_zar": 30,
+    "active": true
+  },
+  {
+    "sku": "BRANDY-004",
+    "category": "BRANDY",
+    "name": "KWV 3 Year",
+    "serving": "25 ml",
+    "selling_price_zar": 32,
+    "active": true
+  },
+  {
+    "sku": "BRANDY-005",
+    "category": "BRANDY",
+    "name": "KWV 5 Year",
+    "serving": "25 ml",
+    "selling_price_zar": 35,
+    "active": true
+  },
+  {
+    "sku": "BRANDY-006",
+    "category": "BRANDY",
+    "name": "Olof Bergh",
+    "serving": "25 ml",
+    "selling_price_zar": 30,
+    "active": true
+  },
+  {
+    "sku": "WHISKY-007",
+    "category": "WHISKY",
+    "name": "Bell's",
+    "serving": "25 ml",
+    "selling_price_zar": 35,
+    "active": true
+  },
+  {
+    "sku": "WHISKY-008",
+    "category": "WHISKY",
+    "name": "J&B",
+    "serving": "25 ml",
+    "selling_price_zar": 35,
+    "active": true
+  },
+  {
+    "sku": "WHISKY-009",
+    "category": "WHISKY",
+    "name": "Johnnie Walker Red Label",
+    "serving": "25 ml",
+    "selling_price_zar": 38,
+    "active": true
+  },
+  {
+    "sku": "WHISKY-010",
+    "category": "WHISKY",
+    "name": "Johnnie Walker Black Label",
+    "serving": "25 ml",
+    "selling_price_zar": 55,
+    "active": true
+  },
+  {
+    "sku": "WHISKY-011",
+    "category": "WHISKY",
+    "name": "Jameson",
+    "serving": "25 ml",
+    "selling_price_zar": 45,
+    "active": true
+  },
+  {
+    "sku": "WHISKY-012",
+    "category": "WHISKY",
+    "name": "Jack Daniel's",
+    "serving": "25 ml",
+    "selling_price_zar": 45,
+    "active": true
+  },
+  {
+    "sku": "WHISKY-013",
+    "category": "WHISKY",
+    "name": "Chivas Regal 12",
+    "serving": "25 ml",
+    "selling_price_zar": 55,
+    "active": true
+  },
+  {
+    "sku": "WHISKY-014",
+    "category": "WHISKY",
+    "name": "Grant's",
+    "serving": "25 ml",
+    "selling_price_zar": 35,
+    "active": true
+  },
+  {
+    "sku": "VODKA-015",
+    "category": "VODKA",
+    "name": "Smirnoff 1818",
+    "serving": "25 ml",
+    "selling_price_zar": 30,
+    "active": true
+  },
+  {
+    "sku": "VODKA-016",
+    "category": "VODKA",
+    "name": "Absolut",
+    "serving": "25 ml",
+    "selling_price_zar": 38,
+    "active": true
+  },
+  {
+    "sku": "VODKA-017",
+    "category": "VODKA",
+    "name": "Skyy",
+    "serving": "25 ml",
+    "selling_price_zar": 35,
+    "active": true
+  },
+  {
+    "sku": "GIN-018",
+    "category": "GIN",
+    "name": "Gordon's",
+    "serving": "25 ml",
+    "selling_price_zar": 30,
+    "active": true
+  },
+  {
+    "sku": "GIN-019",
+    "category": "GIN",
+    "name": "Tanqueray",
+    "serving": "25 ml",
+    "selling_price_zar": 40,
+    "active": true
+  },
+  {
+    "sku": "GIN-020",
+    "category": "GIN",
+    "name": "Bombay Sapphire",
+    "serving": "25 ml",
+    "selling_price_zar": 42,
+    "active": true
+  },
+  {
+    "sku": "RUM-021",
+    "category": "RUM",
+    "name": "Captain Morgan Dark Rum",
+    "serving": "25 ml",
+    "selling_price_zar": 32,
+    "active": true
+  },
+  {
+    "sku": "RUM-022",
+    "category": "RUM",
+    "name": "Captain Morgan Spiced Gold",
+    "serving": "25 ml",
+    "selling_price_zar": 32,
+    "active": true
+  },
+  {
+    "sku": "RUM-023",
+    "category": "RUM",
+    "name": "Red Heart Rum",
+    "serving": "25 ml",
+    "selling_price_zar": 30,
+    "active": true
+  },
+  {
+    "sku": "TEQUILA-024",
+    "category": "TEQUILA",
+    "name": "Jose Cuervo Gold",
+    "serving": "25 ml",
+    "selling_price_zar": 40,
+    "active": true
+  },
+  {
+    "sku": "TEQUILA-025",
+    "category": "TEQUILA",
+    "name": "Jose Cuervo Silver",
+    "serving": "25 ml",
+    "selling_price_zar": 40,
+    "active": true
+  },
+  {
+    "sku": "LIQUEUR-026",
+    "category": "LIQUEUR",
+    "name": "Amarula Cream",
+    "serving": "25 ml",
+    "selling_price_zar": 32,
+    "active": true
+  },
+  {
+    "sku": "LIQUEUR-027",
+    "category": "LIQUEUR",
+    "name": "Jägermeister",
+    "serving": "25 ml",
+    "selling_price_zar": 40,
+    "active": true
+  },
+  {
+    "sku": "LIQUEUR-028",
+    "category": "LIQUEUR",
+    "name": "Southern Comfort",
+    "serving": "25 ml",
+    "selling_price_zar": 35,
+    "active": true
+  },
+  {
+    "sku": "BEER-029",
+    "category": "BEER",
+    "name": "Carling Black Label",
+    "serving": "330 ml",
+    "selling_price_zar": 30,
+    "active": true
+  },
+  {
+    "sku": "BEER-030",
+    "category": "BEER",
+    "name": "Castle Lager",
+    "serving": "330 ml",
+    "selling_price_zar": 30,
+    "active": true
+  },
+  {
+    "sku": "BEER-031",
+    "category": "BEER",
+    "name": "Castle Lite",
+    "serving": "330 ml",
+    "selling_price_zar": 32,
+    "active": true
+  },
+  {
+    "sku": "BEER-032",
+    "category": "BEER",
+    "name": "Hansa Pilsener",
+    "serving": "330 ml",
+    "selling_price_zar": 30,
+    "active": true
+  },
+  {
+    "sku": "BEER-033",
+    "category": "BEER",
+    "name": "Heineken",
+    "serving": "330 ml",
+    "selling_price_zar": 36,
+    "active": true
+  },
+  {
+    "sku": "BEER-034",
+    "category": "BEER",
+    "name": "Corona",
+    "serving": "355 ml",
+    "selling_price_zar": 45,
+    "active": true
+  },
+  {
+    "sku": "BEER-035",
+    "category": "BEER",
+    "name": "Windhoek Lager",
+    "serving": "330 ml",
+    "selling_price_zar": 34,
+    "active": true
+  },
+  {
+    "sku": "BEER-036",
+    "category": "BEER",
+    "name": "Windhoek Draught",
+    "serving": "440 ml",
+    "selling_price_zar": 40,
+    "active": true
+  },
+  {
+    "sku": "BEER-037",
+    "category": "BEER",
+    "name": "Stella Artois",
+    "serving": "330 ml",
+    "selling_price_zar": 38,
+    "active": true
+  },
+  {
+    "sku": "BEER-038",
+    "category": "BEER",
+    "name": "Budweiser",
+    "serving": "330 ml",
+    "selling_price_zar": 34,
+    "active": true
+  },
+  {
+    "sku": "CIDER-RT-039",
+    "category": "CIDER & RTD",
+    "name": "Savanna Dry",
+    "serving": "330 ml",
+    "selling_price_zar": 38,
+    "active": true
+  },
+  {
+    "sku": "CIDER-RT-040",
+    "category": "CIDER & RTD",
+    "name": "Savanna Light",
+    "serving": "330 ml",
+    "selling_price_zar": 38,
+    "active": true
+  },
+  {
+    "sku": "CIDER-RT-041",
+    "category": "CIDER & RTD",
+    "name": "Hunter's Dry",
+    "serving": "330 ml",
+    "selling_price_zar": 36,
+    "active": true
+  },
+  {
+    "sku": "CIDER-RT-042",
+    "category": "CIDER & RTD",
+    "name": "Hunter's Gold",
+    "serving": "330 ml",
+    "selling_price_zar": 36,
+    "active": true
+  },
+  {
+    "sku": "CIDER-RT-043",
+    "category": "CIDER & RTD",
+    "name": "Brutal Fruit Ruby Apple",
+    "serving": "275 ml",
+    "selling_price_zar": 34,
+    "active": true
+  },
+  {
+    "sku": "CIDER-RT-044",
+    "category": "CIDER & RTD",
+    "name": "Brutal Fruit Spritzer",
+    "serving": "275 ml",
+    "selling_price_zar": 34,
+    "active": true
+  },
+  {
+    "sku": "CIDER-RT-045",
+    "category": "CIDER & RTD",
+    "name": "Bernini Classic",
+    "serving": "275 ml",
+    "selling_price_zar": 34,
+    "active": true
+  },
+  {
+    "sku": "CIDER-RT-046",
+    "category": "CIDER & RTD",
+    "name": "Smirnoff Spin",
+    "serving": "300 ml",
+    "selling_price_zar": 34,
+    "active": true
+  },
+  {
+    "sku": "WINE-047",
+    "category": "WINE",
+    "name": "Four Cousins Sweet Rosé",
+    "serving": "Glass",
+    "selling_price_zar": 35,
+    "active": true
+  },
+  {
+    "sku": "WINE-048",
+    "category": "WINE",
+    "name": "Four Cousins Sweet Red",
+    "serving": "Glass",
+    "selling_price_zar": 35,
+    "active": true
+  },
+  {
+    "sku": "WINE-049",
+    "category": "WINE",
+    "name": "Nederburg Baronne",
+    "serving": "Glass",
+    "selling_price_zar": 45,
+    "active": true
+  },
+  {
+    "sku": "WINE-050",
+    "category": "WINE",
+    "name": "Nederburg Sauvignon Blanc",
+    "serving": "Glass",
+    "selling_price_zar": 45,
+    "active": true
+  },
+  {
+    "sku": "WINE-051",
+    "category": "WINE",
+    "name": "Drostdy-Hof Adelpracht",
+    "serving": "Glass",
+    "selling_price_zar": 40,
+    "active": true
+  },
+  {
+    "sku": "WINE-052",
+    "category": "WINE",
+    "name": "Drostdy-Hof Claret Select",
+    "serving": "Glass",
+    "selling_price_zar": 40,
+    "active": true
+  },
+  {
+    "sku": "SPARKLIN-053",
+    "category": "SPARKLING",
+    "name": "J.C. Le Roux Le Domaine",
+    "serving": "750 ml bottle",
+    "selling_price_zar": 220,
+    "active": true
+  },
+  {
+    "sku": "SPARKLIN-054",
+    "category": "SPARKLING",
+    "name": "J.C. Le Roux La Chanson",
+    "serving": "750 ml bottle",
+    "selling_price_zar": 220,
+    "active": true
+  },
+  {
+    "sku": "SPARKLIN-055",
+    "category": "SPARKLING",
+    "name": "Krone Night Nectar",
+    "serving": "750 ml bottle",
+    "selling_price_zar": 320,
+    "active": true
+  },
+  {
+    "sku": "SOFT-DRI-056",
+    "category": "SOFT DRINK",
+    "name": "Coca-Cola",
+    "serving": "330 ml",
+    "selling_price_zar": 20,
+    "active": true
+  },
+  {
+    "sku": "SOFT-DRI-057",
+    "category": "SOFT DRINK",
+    "name": "Coca-Cola Zero",
+    "serving": "330 ml",
+    "selling_price_zar": 20,
+    "active": true
+  },
+  {
+    "sku": "SOFT-DRI-058",
+    "category": "SOFT DRINK",
+    "name": "Sprite",
+    "serving": "330 ml",
+    "selling_price_zar": 20,
+    "active": true
+  },
+  {
+    "sku": "SOFT-DRI-059",
+    "category": "SOFT DRINK",
+    "name": "Fanta Orange",
+    "serving": "330 ml",
+    "selling_price_zar": 20,
+    "active": true
+  },
+  {
+    "sku": "SOFT-DRI-060",
+    "category": "SOFT DRINK",
+    "name": "Stoney Ginger Beer",
+    "serving": "330 ml",
+    "selling_price_zar": 20,
+    "active": true
+  },
+  {
+    "sku": "SOFT-DRI-061",
+    "category": "SOFT DRINK",
+    "name": "Cream Soda",
+    "serving": "330 ml",
+    "selling_price_zar": 20,
+    "active": true
+  },
+  {
+    "sku": "SOFT-DRI-062",
+    "category": "SOFT DRINK",
+    "name": "Appletiser",
+    "serving": "330 ml",
+    "selling_price_zar": 28,
+    "active": true
+  },
+  {
+    "sku": "SOFT-DRI-063",
+    "category": "SOFT DRINK",
+    "name": "Grapetiser",
+    "serving": "330 ml",
+    "selling_price_zar": 28,
+    "active": true
+  },
+  {
+    "sku": "MIXER-064",
+    "category": "MIXER",
+    "name": "Schweppes Tonic Water",
+    "serving": "200 ml",
+    "selling_price_zar": 18,
+    "active": true
+  },
+  {
+    "sku": "MIXER-065",
+    "category": "MIXER",
+    "name": "Schweppes Soda Water",
+    "serving": "200 ml",
+    "selling_price_zar": 18,
+    "active": true
+  },
+  {
+    "sku": "MIXER-066",
+    "category": "MIXER",
+    "name": "Schweppes Lemonade",
+    "serving": "200 ml",
+    "selling_price_zar": 18,
+    "active": true
+  },
+  {
+    "sku": "MIXER-067",
+    "category": "MIXER",
+    "name": "Schweppes Dry Lemon",
+    "serving": "200 ml",
+    "selling_price_zar": 18,
+    "active": true
+  },
+  {
+    "sku": "WATER-068",
+    "category": "WATER",
+    "name": "Still Water",
+    "serving": "500 ml",
+    "selling_price_zar": 15,
+    "active": true
+  },
+  {
+    "sku": "WATER-069",
+    "category": "WATER",
+    "name": "Sparkling Water",
+    "serving": "500 ml",
+    "selling_price_zar": 18,
+    "active": true
+  },
+  {
+    "sku": "WATER-070",
+    "category": "WATER",
+    "name": "Still Water",
+    "serving": "1.5 L",
+    "selling_price_zar": 25,
+    "active": true
+  },
+  {
+    "sku": "ENERGY-071",
+    "category": "ENERGY",
+    "name": "Red Bull",
+    "serving": "250 ml",
+    "selling_price_zar": 32,
+    "active": true
+  },
+  {
+    "sku": "ENERGY-072",
+    "category": "ENERGY",
+    "name": "Monster Energy",
+    "serving": "500 ml",
+    "selling_price_zar": 35,
+    "active": true
+  },
+  {
+    "sku": "ENERGY-073",
+    "category": "ENERGY",
+    "name": "Dragon Energy",
+    "serving": "500 ml",
+    "selling_price_zar": 25,
+    "active": true
+  },
+  {
+    "sku": "JUICE-074",
+    "category": "JUICE",
+    "name": "Orange Juice",
+    "serving": "300 ml",
+    "selling_price_zar": 22,
+    "active": true
+  },
+  {
+    "sku": "JUICE-075",
+    "category": "JUICE",
+    "name": "Mango Juice",
+    "serving": "300 ml",
+    "selling_price_zar": 22,
+    "active": true
+  },
+  {
+    "sku": "JUICE-076",
+    "category": "JUICE",
+    "name": "Cranberry Juice",
+    "serving": "300 ml",
+    "selling_price_zar": 25,
+    "active": true
+  },
+  {
+    "sku": "NON-ALCO-077",
+    "category": "NON-ALCOHOLIC",
+    "name": "Heineken 0.0",
+    "serving": "330 ml",
+    "selling_price_zar": 32,
+    "active": true
+  },
+  {
+    "sku": "NON-ALCO-078",
+    "category": "NON-ALCOHOLIC",
+    "name": "Savanna Non-Alcoholic",
+    "serving": "330 ml",
+    "selling_price_zar": 34,
+    "active": true
+  },
+  {
+    "sku": "NON-ALCO-079",
+    "category": "NON-ALCOHOLIC",
+    "name": "Alcohol-Free Sparkling Grape",
+    "serving": "750 ml",
+    "selling_price_zar": 120,
+    "active": true
+  },
+  {
+    "sku": "MOCKTAIL-080",
+    "category": "MOCKTAIL",
+    "name": "Virgin Mojito",
+    "serving": "Glass",
+    "selling_price_zar": 45,
+    "active": true
+  },
+  {
+    "sku": "MOCKTAIL-081",
+    "category": "MOCKTAIL",
+    "name": "Fruit Punch",
+    "serving": "Glass",
+    "selling_price_zar": 45,
+    "active": true
+  },
+  {
+    "sku": "MOCKTAIL-082",
+    "category": "MOCKTAIL",
+    "name": "Tropical Cooler",
+    "serving": "Glass",
+    "selling_price_zar": 45,
+    "active": true
+  },
+  {
+    "sku": "FOOD-083",
+    "category": "FOOD",
+    "name": "Beef Braai Plate",
+    "serving": "Plate",
+    "selling_price_zar": 120,
+    "active": true
+  },
+  {
+    "sku": "FOOD-084",
+    "category": "FOOD",
+    "name": "Chicken Braai Plate",
+    "serving": "Plate",
+    "selling_price_zar": 95,
+    "active": true
+  },
+  {
+    "sku": "FOOD-085",
+    "category": "FOOD",
+    "name": "Pork Chop Plate",
+    "serving": "Plate",
+    "selling_price_zar": 110,
+    "active": true
+  },
+  {
+    "sku": "FOOD-086",
+    "category": "FOOD",
+    "name": "Boerewors Plate",
+    "serving": "Plate",
+    "selling_price_zar": 85,
+    "active": true
+  },
+  {
+    "sku": "FOOD-087",
+    "category": "FOOD",
+    "name": "Mixed Grill",
+    "serving": "Plate",
+    "selling_price_zar": 160,
+    "active": true
+  },
+  {
+    "sku": "FOOD-088",
+    "category": "FOOD",
+    "name": "Chicken Wings",
+    "serving": "6 pieces",
+    "selling_price_zar": 75,
+    "active": true
+  },
+  {
+    "sku": "FOOD-089",
+    "category": "FOOD",
+    "name": "Steak & Chips",
+    "serving": "Plate",
+    "selling_price_zar": 150,
+    "active": true
+  },
+  {
+    "sku": "FOOD-090",
+    "category": "FOOD",
+    "name": "Pap & Wors",
+    "serving": "Plate",
+    "selling_price_zar": 75,
+    "active": true
+  },
+  {
+    "sku": "FOOD-091",
+    "category": "FOOD",
+    "name": "Chips",
+    "serving": "Regular",
+    "selling_price_zar": 35,
+    "active": true
+  },
+  {
+    "sku": "FOOD-092",
+    "category": "FOOD",
+    "name": "Chakalaka",
+    "serving": "Side",
+    "selling_price_zar": 20,
+    "active": true
+  },
+  {
+    "sku": "FOOD-093",
+    "category": "FOOD",
+    "name": "Garden Salad",
+    "serving": "Side",
+    "selling_price_zar": 25,
+    "active": true
+  },
+  {
+    "sku": "FOOD-094",
+    "category": "FOOD",
+    "name": "Meat Platter",
+    "serving": "Sharing",
+    "selling_price_zar": 280,
+    "active": true
+  },
+  {
+    "sku": "FOOD-095",
+    "category": "FOOD",
+    "name": "Family Braai Platter",
+    "serving": "Sharing",
+    "selling_price_zar": 450,
+    "active": true
+  }
+]
