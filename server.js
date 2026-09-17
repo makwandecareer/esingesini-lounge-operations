@@ -315,7 +315,13 @@ app.get('/api/audit',auth,manager, async (req,res)=>{
   res.json(rows);
 });
 
-app.get('*',(req,res)=>res.sendFile(path.join(__dirname,'public','index.html')));
+// Express 5 no longer accepts a bare '*' route pattern. Use a final middleware fallback
+// for browser navigation while leaving API and health routes untouched.
+app.use((req,res,next)=>{
+  if(req.method !== 'GET') return next();
+  if(req.path.startsWith('/api/') || req.path === '/health') return next();
+  return res.sendFile(path.join(__dirname,'public','index.html'));
+});
 
 migrate().then(()=>{
   app.listen(PORT,()=>console.log(`Esingesini Lounge Operations listening on ${PORT}`));
