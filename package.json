@@ -1,12 +1,12 @@
 {
   "name": "esingesini-lounge-operations",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "private": true,
-  "description": "Production business operations, POS, unified stock synchronization, supplier pricing, markup, accounting, cash-up and management system for Esingesini Lounge.",
+  "description": "Production business operations, POS, unified stock synchronization, supplier pricing, markup, accounting, Capitec merchant readiness, cash-up and management system for Esingesini Lounge.",
   "main": "system-server.js",
   "scripts": {
-    "start": "node -r ./accounting-preload.js -r ./integration-preload.js system-server.js",
-    "check": "node --check accounting-preload.js && node --check integration-preload.js && node --check system-server.js"
+    "start": "node -r ./accounting-preload.js -r ./integration-preload.js -r ./payment-preload.js system-server.js",
+    "check": "node --check accounting-preload.js && node --check integration-preload.js && node --check payment-preload.js && node --check system-server.js"
   },
   "engines": { "node": ">=20" },
   "dependencies": {
