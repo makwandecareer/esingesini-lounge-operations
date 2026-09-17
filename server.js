@@ -132,6 +132,19 @@ async function migrate(){
     details JSONB NOT NULL DEFAULT '{}'::jsonb,
     created_at TIMESTAMPTZ NOT NULL DEFAULT now()
   );
+  CREATE TABLE IF NOT EXISTS merchant_settlements(
+    id BIGSERIAL PRIMARY KEY,
+    business_date DATE NOT NULL,
+    channel TEXT NOT NULL,
+    gross_amount NUMERIC(12,2) NOT NULL CHECK (gross_amount>=0),
+    fees NUMERIC(12,2) NOT NULL DEFAULT 0 CHECK (fees>=0),
+    net_amount NUMERIC(12,2) NOT NULL CHECK (net_amount>=0),
+    reference TEXT,
+    status TEXT NOT NULL DEFAULT 'PENDING',
+    notes TEXT,
+    actor TEXT NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+  );
   ALTER TABLE products ADD COLUMN IF NOT EXISTS brand TEXT;
   ALTER TABLE products ADD COLUMN IF NOT EXISTS size_label TEXT;
   ALTER TABLE products ADD COLUMN IF NOT EXISTS units_per_case INTEGER NOT NULL DEFAULT 1;
@@ -140,7 +153,6 @@ async function migrate(){
   ALTER TABLE products ADD COLUMN IF NOT EXISTS manually_added BOOLEAN NOT NULL DEFAULT FALSE;
   `);
 
-  // Remove legacy users role check so Director/Administrator roles are supported.
   const {rows:constraints}=await pool.query(`SELECT conname FROM pg_constraint WHERE conrelid='users'::regclass AND contype='c'`);
   for(const c of constraints){ if(c.conname.toLowerCase().includes('role')) await pool.query(`ALTER TABLE users DROP CONSTRAINT IF EXISTS "${c.conname}"`); }
 
@@ -253,6 +265,31 @@ app.get('/api/dashboard',auth,async(req,res)=>{
   const {rows:[e]}=await pool.query(`SELECT COALESCE(sum(amount),0)::float expenses FROM expenses WHERE created_at::date=current_date`);
   const {rows:[st]}=await pool.query(`SELECT COALESCE(sum(COALESCE(unit_cost,0)*qty),0)::float stock_value,count(*) FILTER(WHERE active=TRUE AND qty<=reorder_level)::int low_stock FROM inventory JOIN products USING(sku)`);
   const {rows:[infra]}=await pool.query(`SELECT * FROM infrastructure_status ORDER BY id DESC LIMIT 1`);res.json({...s,...e,...st,infrastructure:infra||null});
+});
+
+app.get('/api/billing',auth,manager,async(req,res)=>{
+  const date=req.query.date||new Date().toISOString().slice(0,10);
+  const {rows:[sales]}=await pool.query(`SELECT COALESCE(sum(subtotal),0)::float total_sales,COALESCE(sum(subtotal) FILTER(WHERE payment_method='CASH'),0)::float cash_sales,COALESCE(sum(subtotal) FILTER(WHERE payment_method='CARD'),0)::float card_sales,COALESCE(sum(subtotal) FILTER(WHERE payment_method='EFT'),0)::float eft_sales,count(*)::int transactions FROM sales WHERE created_at::date=$1`,[date]);
+  const {rows:[exp]}=await pool.query(`SELECT COALESCE(sum(amount),0)::float expenses,COALESCE(sum(amount) FILTER(WHERE payment_method='CASH'),0)::float cash_expenses FROM expenses WHERE created_at::date=$1`,[date]);
+  const {rows:settlements}=await pool.query(`SELECT id,business_date,channel,gross_amount::float gross_amount,fees::float fees,net_amount::float net_amount,reference,status,notes,actor,created_at FROM merchant_settlements WHERE business_date=$1 ORDER BY id DESC`,[date]);
+  const {rows:[sett]}=await pool.query(`SELECT COALESCE(sum(net_amount) FILTER(WHERE channel='CAPITEC_CARD'),0)::float capitec_card_net,COALESCE(sum(net_amount) FILTER(WHERE channel='CAPITEC_EFT'),0)::float capitec_eft_net,COALESCE(sum(net_amount) FILTER(WHERE channel='CASH_BANKING'),0)::float cash_banked FROM merchant_settlements WHERE business_date=$1`,[date]);
+  const {rows:[cu]}=await pool.query(`SELECT * FROM cashups WHERE business_date=$1 ORDER BY id DESC LIMIT 1`,[date]);
+  res.json({date,...sales,...exp,...sett,unsettled_card:Number((sales.card_sales-sett.capitec_card_net).toFixed(2)),unsettled_eft:Number((sales.eft_sales-sett.capitec_eft_net).toFixed(2)),cash_available:Number((sales.cash_sales-exp.cash_expenses-sett.cash_banked).toFixed(2)),cashup:cu||null,settlements});
+});
+
+app.post('/api/merchant-settlements',auth,manager,async(req,res)=>{
+  const b=req.body||{}; const date=b.business_date||new Date().toISOString().slice(0,10); const channel=String(b.channel||'').toUpperCase();
+  if(!['CAPITEC_CARD','CAPITEC_EFT','CASH_BANKING'].includes(channel)) return res.status(400).json({error:'Invalid settlement channel'});
+  const gross=Number(b.gross_amount),fees=Number(b.fees||0),net=b.net_amount===''||b.net_amount==null?Number((gross-fees).toFixed(2)):Number(b.net_amount);
+  if(!(gross>=0)||!(fees>=0)||!(net>=0)) return res.status(400).json({error:'Valid settlement amounts required'});
+  const status=String(b.status||'PENDING').toUpperCase(); if(!['PENDING','SETTLED','RECONCILED'].includes(status)) return res.status(400).json({error:'Invalid settlement status'});
+  const {rows:[row]}=await pool.query(`INSERT INTO merchant_settlements(business_date,channel,gross_amount,fees,net_amount,reference,status,notes,actor) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9) RETURNING *`,[date,channel,gross,fees,net,b.reference||null,status,b.notes||null,req.user.email]);
+  await audit(req.user.email,'MERCHANT_SETTLEMENT_RECORDED','SETTLEMENT',String(row.id),{channel,gross,fees,net,status}); res.json({ok:true,settlement:row});
+});
+
+app.delete('/api/merchant-settlements/:id',auth,director,async(req,res)=>{
+  const {rows:[row]}=await pool.query(`DELETE FROM merchant_settlements WHERE id=$1 RETURNING *`,[Number(req.params.id)]); if(!row)return res.status(404).json({error:'Settlement not found'});
+  await audit(req.user.email,'MERCHANT_SETTLEMENT_REMOVED','SETTLEMENT',String(row.id),{channel:row.channel,net_amount:row.net_amount});res.json({ok:true});
 });
 
 app.post('/api/stock/receive',auth,manager,async(req,res)=>{
