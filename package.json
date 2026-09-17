@@ -1,12 +1,12 @@
 {
   "name": "esingesini-lounge-operations",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": true,
-  "description": "Production business operations, POS, stock, cash-up and management system for Esingesini Lounge.",
+  "description": "Production business operations, POS, supplier pricing, markup, accounting, stock, cash-up and management system for Esingesini Lounge.",
   "main": "system-server.js",
   "scripts": {
-    "start": "node system-server.js",
-    "check": "node --check system-server.js"
+    "start": "node -r ./accounting-preload.js system-server.js",
+    "check": "node --check accounting-preload.js && node --check system-server.js"
   },
   "engines": { "node": ">=20" },
   "dependencies": {
