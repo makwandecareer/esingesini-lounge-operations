@@ -30,8 +30,8 @@ async function load(){
   for(const [sku,brand,variant,size] of items){
     const name=`${brand} ${variant}`;
     await pool.query(`INSERT INTO products(sku,category,name,brand,serving,size_label,selling_price,units_per_case,case_price,age_restricted,expiry_tracking,active,manually_added)
-      VALUES($1,'CIGARETTES',$2,$3,$4,$4,0,10,NULL,TRUE,FALSE,FALSE,FALSE)
-      ON CONFLICT(sku) DO UPDATE SET category='CIGARETTES',brand=EXCLUDED.brand,name=EXCLUDED.name,serving=EXCLUDED.serving,size_label=EXCLUDED.size_label,units_per_case=10,age_restricted=TRUE`,[sku,name,brand,size]);
+      VALUES($1,'CIGARETTES',$2,$3,$4,$4,0,10,NULL,TRUE,FALSE,TRUE,FALSE)
+      ON CONFLICT(sku) DO UPDATE SET category='CIGARETTES',brand=EXCLUDED.brand,name=EXCLUDED.name,serving=EXCLUDED.serving,size_label=EXCLUDED.size_label,units_per_case=10,age_restricted=TRUE,active=TRUE`,[sku,name,brand,size]);
     await pool.query(`INSERT INTO inventory(sku,reorder_level) VALUES($1,0) ON CONFLICT(sku) DO NOTHING`,[sku]);
   }
 }
