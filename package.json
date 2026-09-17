@@ -1,12 +1,12 @@
 {
   "name": "esingesini-lounge-operations",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "private": true,
-  "description": "Production business operations, POS, unified stock synchronization, supplier pricing, markup, accounting, Capitec merchant readiness and strict executive access control for Esingesini Lounge.",
+  "description": "Production business operations, POS, unified stock synchronization, supplier pricing, markup, accounting, Capitec merchant readiness, strict executive access control and controlled cigarette catalogue for Esingesini Lounge.",
   "main": "system-server.js",
   "scripts": {
-    "start": "node -r ./access-preload.js -r ./accounting-preload.js -r ./integration-preload.js -r ./payment-preload.js system-server.js",
-    "check": "node --check access-preload.js && node --check accounting-preload.js && node --check integration-preload.js && node --check payment-preload.js && node --check system-server.js"
+    "start": "node -r ./access-preload.js -r ./accounting-preload.js -r ./integration-preload.js -r ./payment-preload.js -r ./cigarette-preload.js system-server.js",
+    "check": "node --check access-preload.js && node --check accounting-preload.js && node --check integration-preload.js && node --check payment-preload.js && node --check cigarette-preload.js && node --check system-server.js"
   },
   "engines": { "node": ">=20" },
   "dependencies": {
